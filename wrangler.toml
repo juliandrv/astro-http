@@ -1,15 +1,9 @@
-main = "workers-site/index.js"
+# wrangler.toml
 name = "astro-http"
-   type = "webpack"
-   account_id = "eb88d8d65950bb1c91396b64fd25c3cd"
-   workers_dev = true
-   compatibility_date = "2023-10-30"
+type = "javascript"
 
-   [site]
-   bucket = "./dist"
+[build]
+upload = { format = "modules", dir = "./dist" }
 
-   [build]
-   command = "npm run build"
-
-   [env.production]
-   pages_build_output_dir = "dist"
+[env.production]
+pages_build_output_dir = "dist"
